@@ -6,12 +6,6 @@ const ListView = () => {
     return (
         <>
             <Navbar/>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <Footer />
         </>
     );
 };

@@ -1,0 +1,38 @@
+@import '../../../sass/abstracts/variables';
+
+.Pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+    cursor: pointer;
+    list-style: none;
+    font-size: 2rem;
+
+    li {
+        list-style: none;
+        padding: .8rem;
+    }
+
+    a {
+        display: inline-block;
+        line-height: 0;
+        padding: .8rem;
+        outline: none;
+    }
+
+    &__Link {
+        font-weight: 400;
+        color: $color-primary;
+
+        &__Active {
+            border-radius: 50%;
+            color: $color-white;
+            background-color: $color-primary;
+            font-weight: 400;
+        }
+
+        &__Disabled {
+           display: none;
+        }
+    }
+}

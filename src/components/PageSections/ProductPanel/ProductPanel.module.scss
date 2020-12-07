@@ -1,0 +1,22 @@
+@import '../../../sass/abstracts/variables';
+
+.ProductPanel {
+    padding: 2rem;
+    background-color: $color-white;
+    &__Cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__Categories {
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    &__Pagination {
+        margin-top: 2rem;
+        border-top: .2rem solid $color-gray;
+        padding: 2rem 30rem 0 30rem;
+    }
+}

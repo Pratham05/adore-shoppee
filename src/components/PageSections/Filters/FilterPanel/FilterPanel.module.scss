@@ -1,0 +1,18 @@
+@import '../../../../sass/abstracts/variables';
+@import '../../../../sass/abstracts/mixins';
+
+.FilterPanel {
+    width: 25vw;
+    background-color: $color-white;
+    padding: 2rem 0;
+
+    &__Heading {
+        display: block;
+        font-weight: 400;
+        padding: 0 2rem;
+        border-bottom: .2rem solid $color-gray;
+    }
+    &__Options {
+        padding: 0 2rem;
+    }
+}

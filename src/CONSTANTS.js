@@ -1,0 +1,1 @@
+export const categoryNames = ["All", "Makeup", "Excessive Oiliness", "Gift-with-purchase", "Aesop"];

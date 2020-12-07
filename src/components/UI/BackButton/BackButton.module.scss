@@ -1,0 +1,19 @@
+@import '../../../sass/abstracts/variables';
+
+.BackButton {
+    width: 60%;
+    border-bottom: .2rem solid $color-black;
+    margin: 0 auto;
+
+    &__Text {
+        display: inline-block;
+        font-size: 2.5rem;
+        letter-spacing: .2rem;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

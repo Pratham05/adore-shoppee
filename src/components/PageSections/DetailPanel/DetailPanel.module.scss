@@ -1,0 +1,48 @@
+@import '../../../sass/abstracts/variables';
+
+.DetailPanel {
+    width: 100%;
+    background-color: $color-white;
+    padding: 1rem;
+
+    > * {
+        display: block;
+        font-weight: 300;
+        font-size: 1.8rem;
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__Title {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        
+    }
+
+    &__Categories {
+        margin-top: -2rem;
+        font-size: 1.4rem;
+        color: $color-gray-dark;
+    }
+
+    &__SKU {
+        font-weight: 400;
+        color: $color-tertiary;
+    }
+
+    &__Price {
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    &__Description {
+        span {
+            display: block;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: .8rem;
+        }
+        text-align: justify;
+    }
+}

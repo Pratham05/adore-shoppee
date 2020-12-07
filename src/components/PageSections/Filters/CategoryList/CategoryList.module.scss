@@ -1,0 +1,34 @@
+@import '../../../../sass/abstracts/variables';
+
+.CategoryList {
+    &__Heading {
+        font-size: 2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 2.5rem 0 1rem 0;
+    }
+    &__List {
+        list-style: none;
+    }
+    &__List__Item {
+        border: .2rem solid $color-gray;
+        border-radius: .4rem;
+        font-size: 1.6rem;
+        padding: 1rem 1.5rem;
+        transition: all .2s ease-in-out;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        &:hover {
+            box-shadow: 0 .5rem 1rem rgba($color-black, $alpha: .1);
+        }
+    }
+
+    &__Active {
+        font-weight: 400;
+        color: $color-white;
+        background-color: $color-primary;
+    }
+}
