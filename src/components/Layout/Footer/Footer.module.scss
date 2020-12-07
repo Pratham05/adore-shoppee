@@ -1,0 +1,13 @@
+@import '../../../sass/abstracts/variables';
+@import '../../../sass/abstracts/mixins';
+
+.Footer {
+    @include u-center-contents;
+    width: 100%;
+    height: 15vh;
+    background-color: $color-primary-dark;
+
+    &__Text {
+        color: $color-white;
+    }
+}

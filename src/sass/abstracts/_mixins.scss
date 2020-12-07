@@ -1,0 +1,14 @@
+
+// This mixin needs to be included only after all the local css definitions
+@mixin u-container {
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+// Centers children items in the middle
+@mixin u-center-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

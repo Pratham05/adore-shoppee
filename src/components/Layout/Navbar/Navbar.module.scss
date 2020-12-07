@@ -1,0 +1,11 @@
+@import '../../../sass/abstracts/variables';
+@import '../../../sass/abstracts/mixins';
+
+.Navbar {
+    background-color: $color-primary;
+    padding: 0.5rem 0;
+    @include u-container;
+    &__Logo {
+        width: 15rem;
+    }
+}
