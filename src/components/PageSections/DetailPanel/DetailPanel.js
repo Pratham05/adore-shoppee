@@ -42,7 +42,7 @@ const DetailPanel = (props) => {
                             price={props.product.price}
                             sku={props.product.sku}
                             description={props.product.description}
-                            categories={props.categoryString}
+                            categories={props.categoryNameString}
                          />;
             imgComp = <div className={styles.DetailPanel__ImageViewer}>
                         <ImageViewer images={props.images}/>
@@ -64,7 +64,7 @@ const mapStateToProps = state => {
         loading: state.singleProduct.loading,
         error: state.singleProduct.error,
         images: state.singleProduct.imageSources,
-        categoryString: state.filter.categoryString,
+        categoryNameString: state.filter.categoryNameString,
     };
 };
 

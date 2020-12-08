@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './Navbar.module.scss'
 import Logo from '../../UI/Logo';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav className={styles.Navbar}>
             <div className={styles.Navbar__Logo}>
-                <Logo/>
+                <Link to="/">
+                    <Logo/>
+                </Link>
             </div>
         </nav>
     );

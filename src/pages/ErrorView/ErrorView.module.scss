@@ -1,0 +1,23 @@
+@import '../../sass/main.scss';
+
+.ErrorView {
+    height: 80vh;
+    @include u-center-contents;
+
+    &__Text {
+        text-align: center;
+        width: 80%;
+        font-size: 4rem;
+    }
+
+    a {
+        color: $color-primary;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            font-weight: 300;
+            border-bottom: .3rem solid $color-primary;
+        }
+    }
+}

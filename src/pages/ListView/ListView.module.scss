@@ -1,0 +1,13 @@
+.ListView {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+
+    &__Filters {
+        width: 23%;
+    }
+
+    &__Products {
+        width: 73%;
+    }
+}
