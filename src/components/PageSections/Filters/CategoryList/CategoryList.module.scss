@@ -11,6 +11,7 @@
         list-style: none;
     }
     &__List__Item {
+        cursor: pointer;
         border: .2rem solid $color-gray;
         border-radius: .4rem;
         font-size: 1.6rem;

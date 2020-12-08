@@ -1,35 +1,20 @@
 import React from 'react';
-import ProductPanel from './components/PageSections/ProductPanel';
-import Img from './components/UI/ImageViewer';
-import FilterPanel from './components/FilterPanel';
-import NavBar from './components/Layout/Navbar';
-import Footer from './components/Layout/Footer';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import ListView from './pages/ListView';
+import DetailView from './pages/DetailView';
+import ErrorView from './pages/ErrorView';
 
 
 function App() {
   return (
-    
-    <>
-    <NavBar></NavBar>
-    <div style={{padding: "2rem"}}>
-    
-    <div style={{display: "flex", justifyContent: "space-between"}}>
-      <div style={{width: "24%"}}>
-      <FilterPanel></FilterPanel>
-      </div>
-
-      <div style={{width: "73%"}}>
-      <ProductPanel></ProductPanel>
-      </div>
-      
-      
-    </div>
-    
-    </div>
-    <Footer></Footer> 
-    </>
-
-    
+    // Placed in switch to make sure only when renders
+    <Switch>
+      {/* Redirect the homepage requests to list page as their is no homepage at the moment */}
+      <Redirect exact from="/" to="/list" />
+      <Route exact path="/list"  component={ListView} />
+      <Route exact path="/product" component={DetailView} />
+      <Route path="*" component={ErrorView} />
+    </Switch>
   );
 };
 

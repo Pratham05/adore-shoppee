@@ -1,50 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import ProductCard from '../components/ProductCard';
+import React from 'react';
 
-import ReactPaginate from 'react-paginate';
+import Navbar from '../components/Layout/Navbar';
+import Footer from '../components/Layout/Footer';
 
+import ImageViewer from '../components/UI/ImageViewer';
 
-const constArray = [];
-    for(let i= 0; i < 100; i ++) {
-        constArray.push(<div key={i}>I am {i}</div>);
- }
-
-
-let renderComp = [];
-
-let currentPage = 0;
+import DetailPanel from '../components/PageSections/DetailPanel';
+ 
 
 const DetailView = () => {
 
-    const [sample, s] = useState(0);
-
-    const pageCount = 10;
-
-    useEffect(()=>{
-        renderComp = renderComp.concat(constArray.slice(currentPage*pageCount,  currentPage*pageCount + pageCount));
-    });
-
-    const handlePageClick = () => {
-        currentPage++;
-        s({});
-    }
-
+    
     return (
         <div>
-            {renderComp}
-            <ReactPaginate
-             previousLabel={'previous'}
-             nextLabel={'next'}
-             breakLabel={'...'}
-             breakClassName={'break-me'}
-             pageCount={pageCount}
-             marginPagesDisplayed={2}
-             pageRangeDisplayed={5}
-             onPageChange={handlePageClick}
-             containerClassName={'pagination'}
-             subContainerClassName={'pages pagination'}
-             activeClassName={'active'}
-            />
+            <Navbar></Navbar>
+                <ImageViewer></ImageViewer>
+                <DetailPanel></DetailPanel>
+            <Footer></Footer>
         </div>
     )
 }
