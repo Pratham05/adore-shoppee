@@ -27,6 +27,9 @@ export const LOAD_PRODUCT_SUCCESS = "LOAD_PRODUCT_SUCCESS";
 export const LOAD_PRODUCT_FAIL = "LOAD_PRODUCT_FAIL";
 
 
+export const CHANGE_PAGE = "CHANGE_PAGE";
+
+
 
 
 

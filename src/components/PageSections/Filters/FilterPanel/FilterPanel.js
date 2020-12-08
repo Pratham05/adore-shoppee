@@ -10,28 +10,31 @@ import * as actions from '../../../../store/actions';
 const FilterPanel = (props) => {
 
     useEffect(() => {
-        
-        
         let query = new URLSearchParams(props.history.location.search);
         if(query.has('categories')) {
             // Categories Already there 
-            
             if (query.get('categories')) {
                 props.initCategory(query.get('categories'));
             } else {
                 props.initCategory();
             }
-            if (query.has('page') && query.has('limit')) {
+            if (query.has('page')) {
                 // Pagination already there
+                if(query.get('page')) {
+                    props.changePage(parseInt(query.get('page')));
+                } 
             } 
         } else{
             // Default action
             props.initCategory();
         }  
-    }, []);
+    }, [props.history.location.search]);
 
     useEffect(() => {
-        props.history.push('/list?categories=' + props.categoryNameString);
+        let query = new URLSearchParams(props.history.location.search);
+        let params = new URLSearchParams(query);
+        params.set('categories', props.categoryNameString);
+        props.history.push('/list?' + params.toString());
     }, [props.categoryNameString]);
 
     const onCategoryChangeHandler = (index) => {
@@ -62,7 +65,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onCategoryClicked: (changeIndex) => dispatch(actions.toggleCategories(changeIndex)),
-        initCategory: (categoryString) => dispatch(actions.initCategory(categoryString))
+        initCategory: (categoryString) => dispatch(actions.initCategory(categoryString)),
+        changePage: (pageNo) => dispatch(actions.changePage(pageNo))
     };
 };
 

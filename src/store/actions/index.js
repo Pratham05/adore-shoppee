@@ -11,3 +11,7 @@ export {
     toggleCategories,
     initCategory,
 } from './filters';
+
+export {
+    changePage,
+} from './pagination';

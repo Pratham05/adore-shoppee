@@ -1,9 +1,10 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
+    totalPages: 0,
     productList: [],
     loading: false,
-    error: false
+    error: false,
 }
 
 
@@ -30,7 +31,8 @@ const reducer = (state=initialState, action) => {
                 ...state,
                 loading: false,
                 error: false,
-                productList: action.productData
+                productList: action.productData,
+                totalPages: action.totalPages
             }
     }
     return state;

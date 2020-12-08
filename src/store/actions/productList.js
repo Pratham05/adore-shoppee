@@ -13,20 +13,21 @@ const loadProductListFail = () => {
     };
 };
 
-const loadProductListSuccess = (productData) => {
+const loadProductListSuccess = (productData, totalPages) => {
     return {
         type: actionTypes.LOAD_PRODUCT_LIST_SUCCESS,
-        productData
+        productData,
+        totalPages
     };
 };
 
-export const loadProductList = (categoryIdString) => {
+export const loadProductList = (categoryIdString, page, limit) => {
     return dispatch => {
         dispatch(loadProductListStart());
-        axios.get('https://www.adorebeauty.com.au/api/ecommerce/catalog/products?include=images&categories:in=' + categoryIdString)
+        axios.get('https://www.adorebeauty.com.au/api/ecommerce/catalog/products?include=images&categories:in=' + categoryIdString + '&page=' + page + '&limit=' + limit)
         .then(response => {
             if (response.data.data.length) {
-                dispatch(loadProductListSuccess(response.data.data))
+                dispatch(loadProductListSuccess(response.data.data, response.data.meta.pagination.total_pages))
             } else {
                 dispatch(loadProductListFail());
             }

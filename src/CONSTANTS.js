@@ -7,6 +7,4 @@ export const categoryInitials = [
 ];
 
 
-
-
-console.log(categoryInitials);
+export const pageLimit = 30;
