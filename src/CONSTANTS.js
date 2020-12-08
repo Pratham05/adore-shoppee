@@ -1,7 +1,12 @@
 export const categoryInitials = [
-    { name: "All", isActive: true },
-    { name: "Makeup", isActive: true },
-    { name: "Excessive Oiliness", isActive: true },
-    { name: "Gift-with-purchase", isActive: true },
-    { name: "Aesop", isActive: true },
+    { name: "All", isActive: true, id: null },
+    { name: "Makeup", isActive: false, id: null },
+    { name: "Excessive Oiliness", isActive: false, id: null },
+    { name: "Gift-with-purchase", isActive: false, id: null },
+    { name: "Aesop", isActive: false, id: null },
 ];
+
+
+
+
+console.log(categoryInitials);

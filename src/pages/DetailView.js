@@ -14,7 +14,6 @@ const DetailView = () => {
     return (
         <div>
             <Navbar></Navbar>
-                <ImageViewer></ImageViewer>
                 <DetailPanel></DetailPanel>
             <Footer></Footer>
         </div>

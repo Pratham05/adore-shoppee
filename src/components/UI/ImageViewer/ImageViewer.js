@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ImageViewer.module.scss';
 
 import SampleImage from '../../../assets/images/sampleProduct.jpeg';
 import Logo from '../../../assets/images/logo.svg';
 
 // Array of full image links
-const images = [SampleImage, Logo, SampleImage, Logo]; 
+//const images = [SampleImage, Logo, SampleImage, Logo]; 
 
-const ImageViewer = () => {
-
+const ImageViewer = ({images}) => {
     // UI State relevant to only this component
     // Stores the path of the image to be displayed in big size
     // Changes whenever a smaller image is hovered on
+    console.log("Resdd", images);
     const [bigImage, setBigImage] = useState(images[0]);
+
 
     const onMouseOverHandler = (event) => {
         setBigImage(event.target.src);

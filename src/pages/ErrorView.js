@@ -10,7 +10,7 @@ const ErrorView = () => {
             <Navbar></Navbar>
                 We are Sorry!
                 Unfortunately we could not find the page that you are looking for.
-                Please try visiting our <Link>HOME PAGE</Link> 
+                Please try visiting our <Link to="/">HOME PAGE</Link> 
             <Footer></Footer>
         </div>
     );

@@ -6,7 +6,6 @@
 .LoadingContainer {
     // This ensures that the loader is rendered in the center of the component being loaded
     width: 100%;
-    height: 100%;
     @include u-center-contents;
 }
 
