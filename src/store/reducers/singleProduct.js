@@ -1,5 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
+import { getFiveImageSet } from './utilities';
+
 const initialState = {
     product: {},
     loading: false,
@@ -7,12 +9,12 @@ const initialState = {
     imageSources: []
 };
 
-const getFiveImageSet = (images) => {
-    return images.slice(0,5).map(image => {
-        return image.url_standard;
-    });
-};
 
+/**
+ * @desc Reducer for changing state values for the single product
+ * @param {object} state The initial state which the single product values need to be set to
+ * @param {object} action Action obtained from the dispatch 
+ */
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.LOAD_PRODUCT_START:

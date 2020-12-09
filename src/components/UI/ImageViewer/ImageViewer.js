@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ImageViewer.module.scss';
 
-import SampleImage from '../../../assets/images/sampleProduct.jpeg';
-import Logo from '../../../assets/images/logo.svg';
 
-// Array of full image links
-//const images = [SampleImage, Logo, SampleImage, Logo]; 
-
+/** 
+  * @desc Renders an array of images styled with one of them made larger than others
+  * Example of images = [img1, img2, img3, img4];
+  * img1 will be used as the default large image
+  * shifts can be made on hovering on the smaller images 
+  * @returns JSX to render the images styled in a way that one of them is larger 
+*/
 const ImageViewer = ({images}) => {
     // UI State relevant to only this component
     // Stores the path of the image to be displayed in big size
-    // Changes whenever a smaller image is hovered on
-    console.log("Resdd", images);
+    // Changes whenever a small image is hovered on
     const [bigImage, setBigImage] = useState(images[0]);
 
 
+    /**
+     * @desc Handler for mouse hover
+     * sets the state to the source of the image tag which is hovered
+    */
     const onMouseOverHandler = (event) => {
         setBigImage(event.target.src);
     }
@@ -27,8 +32,6 @@ const ImageViewer = ({images}) => {
                     onMouseOver={onMouseOverHandler} 
                     src={image} key={index} alt={"Small" + index}/>
     });
-
-    console.log(smallImages[0])
 
     return (
         <div className={styles.ImageViewer}>

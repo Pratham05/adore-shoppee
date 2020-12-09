@@ -2,11 +2,14 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import styles from './Pagination.module.scss';
 
-
-function handlePageClick({ selected: selectedPage }) {
-    console.log(selectedPage);
-  }
-
+/** 
+  * @desc Renders the pagination component for the product list
+  * Utilizes react-paginate library for obtaining the page component 
+  * Custom styles have been implemented to style according to the application
+  * @param {function} onPageHandler Handles page click (Must accept a page number as a parameter)
+  * @param {integer} pageCount the number of pages to be rendered
+  * @param {inteher} currentPage Page number to be set on component load
+*/
 const Pagination = ({ onPageChangeHandler, pageCount , currentPage}) => {
     return (
         <ReactPaginate

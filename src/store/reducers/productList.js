@@ -8,7 +8,11 @@ const initialState = {
 }
 
 
-
+/**
+ * @desc Reducer for changing state values for product list
+ * @param {object} state The initial state which the product list values need to be set to
+ * @param {object} action Action obtained from the dispatch 
+ */
 const reducer = (state=initialState, action) => {
     switch(action.type) {
         case actionTypes.LOAD_PRODUCT_LIST_START:

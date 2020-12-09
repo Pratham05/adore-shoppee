@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import styles from './CategoryList.module.scss';
 
+/**
+ * @desc Used for rendering the category list 
+ * @param {function} onClickHandler for handling toggles on category click
+ * @param {array} categories the array of category objects to be shown on screen
+ */
 const CategoryList = ({onClickHandler, categories}) => {
 
     const normalStyle = styles.CategoryList__List__Item;

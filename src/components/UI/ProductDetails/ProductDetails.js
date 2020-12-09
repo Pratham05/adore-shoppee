@@ -1,6 +1,14 @@
 import React from 'react';
 import styles from './ProductDetails.module.scss';
 
+/** 
+  * @desc Renders The details of a particular product on page
+  * @param {string} title The Title or name of the product
+  * @param {integer} price Price of the product
+  * @param {string} sku Product sku
+  * @param {string} description A Description abour the product
+  * @param {string} categories  comma seperated string with the current selected categories
+*/
 const ProductDetails = ({ title, price, sku, description, categories }) => {
     return (
         <div className={styles.ProductDetails}>

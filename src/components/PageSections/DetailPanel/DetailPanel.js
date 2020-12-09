@@ -13,8 +13,16 @@ import ProductDetails from '../../UI/ProductDetails';
 
 import ImageViewer from '../../UI/ImageViewer';
 
+/**
+ * @desc Renders the product detail section for the detail page
+ * Accesses redux store for obtaining product details
+ * @param {object} props - used for accessing the history prop for routing and the values obtained from store
+ */
 const DetailPanel = (props) => {
-
+    /**
+     * @desc This useeffect works on initial load and only when 
+     * the url is changed
+     */
     useEffect(()=> {
         let query = new URLSearchParams(props.history.location.search);
         if(query.has('id')) {
@@ -27,8 +35,10 @@ const DetailPanel = (props) => {
         }  
     }, [props.history.query]);
 
+    // The product detail section
     let renderComp = null;
 
+    //The image section to be displayed on the left
     let imgComp = null;
 
     if (props.loading) {
@@ -74,4 +84,5 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+// Withrouter Gives History props access for routing
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(DetailPanel));

@@ -1,6 +1,10 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 
+/** 
+  * @desc Renders the website footer
+  * @returns Styled JSX for the footer elements
+*/
 const Footer = () => {
     return (
         <div className={styles.Footer}>

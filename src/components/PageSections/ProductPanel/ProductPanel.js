@@ -12,9 +12,14 @@ import Loading from '../../UI/Loading';
 
 import LoadError from '../../UI/LoadError';
 
-
+/**
+ * @desc Renders the product section on the product page 
+ * and handles corresponding interactions with store to laod products
+ * @param {object} props - used for accessing the history prop for routing and the values obtained from store
+ */
 const ProductPanel = (props) => {
 
+    // Effect runs whenever the categoryidString, the pages or totalPages props change in the store
     useEffect(()=> {
         props.loadProducts(props.categoryIdString, props.page, props.limit);
     }, [props.categoryIdString, props.page, props.totalPages]);
@@ -27,7 +32,11 @@ const ProductPanel = (props) => {
         props.changePage(pageNumber);
     }
 
-
+    /**
+     * @desc Handles click of a product
+     * Routes to product detail page with id passed in query params
+     * @param id - integer - id of the product to be rendered 
+     */
     const onProductClickHandler = (id) => {
         // Send to Product Page
         props.history.push('/product?id=' + id);
@@ -35,6 +44,7 @@ const ProductPanel = (props) => {
 
     let renderCard = null;
     
+    // Check for loading and errors
     if (props.loading) {
         renderCard = <Loading/>
     } else {
@@ -93,4 +103,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+// with router gives access to history props 
+// and connect, connects to store
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ProductPanel));

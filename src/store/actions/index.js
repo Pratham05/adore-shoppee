@@ -1,3 +1,5 @@
+// Exports all action creators to be made public
+
 export {
     loadProductList,
 } from './productList';

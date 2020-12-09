@@ -1,13 +1,10 @@
 import * as actionTypes from '../actions/actionTypes';
 
+import { generateCategoryIdString, 
+            generateCategoryString, 
+            toggleCategory, 
+            copyCategoryList } from './utilities';
 
-const generateCategoryString = (list) => {
-    return list.filter(item => item.isActive).map(item => item.name).join(',')
-};
-
-const generateCategoryIdString = (list) => {
-    return list.filter(item => item.isActive).map(item => item.id).join(',')
-};
 
 const initialState = {
     categoryList: [],
@@ -17,23 +14,11 @@ const initialState = {
     loading: false,
 }
 
-const toggleCategory = (oldcategoryList, changeIndex) => {
-    // Update State immutably
-    return oldcategoryList.map((category, index) => {
-        if ( index === changeIndex ) {
-            return { name: category.name, isActive: !category.isActive, id: category.id };
-        } 
-        return { ...category };
-    });
-}
-
-const copyCategoryList = (oldcategoryList) => {
-    return oldcategoryList.map(category => {
-        return { ...category };
-    });
-}
-
-
+/**
+ * @desc Reducer for changing state values for filters
+ * @param {object} state The initial state which the filter values need to be set to
+ * @param {object} action Action obtained from the dispatch 
+ */
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.TOGGLE_CATEGORY:

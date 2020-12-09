@@ -8,7 +8,11 @@ const initialState = {
 }
 
 
-
+/**
+ * @desc Reducer for changing state values for pagination
+ * @param {object} state The initial state which the pagination values need to be set to
+ * @param {object} action Action obtained from the dispatch 
+ */
 const reducer = (state = initialState, action) => {
     switch(action.type) {
 
