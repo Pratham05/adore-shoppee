@@ -7,6 +7,10 @@ This is a React SPA which displays the product catelog provided by Adore Beauty.
 
 [Try the Website](https://relaxed-pasteur-5f42a9.netlify.app)
 
+Note 
+* If links (urls) are copied and pasted, it doesnt work on the website because of a netlify security feature
+* The feature has been implemented though and would work when hosted on a server
+
 
 ## Built With
 React js | Redux(State Management)<br/>
